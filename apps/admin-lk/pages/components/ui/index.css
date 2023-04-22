@@ -1,0 +1,11 @@
+body {
+    margin: 0 auto;
+}
+
+#__next {
+    height: 100vh;
+}
+
+.ant-layout {
+    height: 100%;
+}
