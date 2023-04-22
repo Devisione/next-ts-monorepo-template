@@ -1,10 +1,6 @@
-import React from 'react';
-import { Header } from '../../../packages/ui-kit';
+import React from "react";
+import { Button } from "@project/ui-kit";
 
 export default function Index() {
-  return (
-    <Header>
-      Header goes here
-    </Header>
-  );
+  return <Button>Header goes here</Button>;
 }

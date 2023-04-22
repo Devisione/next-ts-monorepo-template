@@ -4,9 +4,11 @@
     "version": "1.0.0",
     "license": "SEE LICENSE IN ../../LICENSE",
     "main": "src/index.ts",
+    "dependencies": {
+      "antd": "5.4.4"
+    },
     "peerDependencies": {
       "react": "*",
-      "typescript": "*",
-      "antd": "5.4.4"
+      "typescript": "*"
     }
-  }
+}
