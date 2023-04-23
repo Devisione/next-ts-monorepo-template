@@ -1,6 +1,6 @@
 import React from "react";
 import { connectContext } from "context-base-api";
-import { AppStore } from "../../entities/app/model/store";
+import { AppStore } from "../../model/store";
 import { Badge, Button } from "@project/ui-kit";
 import { SoundOutlined } from "@project/ui-kit/icons";
 
