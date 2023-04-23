@@ -1,23 +1,14 @@
-import React, { PropsWithChildren } from "react";
+import React, { memo, PropsWithChildren } from "react";
 import {
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
-  SoundOutlined,
 } from "@project/ui-kit/icons";
-import { Layout, Menu, Badge, Button, theme } from "@project/ui-kit";
-import { connectContext } from "context-base-api";
-import { AppStore } from "../../model/app/store";
+import { Layout, Menu, Badge, theme } from "@project/ui-kit";
+import NotificationBadge from "./NotificationBadge";
 const { Header, Content, Footer, Sider } = Layout;
 
-const LayoutWrapper = connectContext(
-  [AppStore.Context],
-  ([
-    {
-      state: { notifications },
-    },
-  ]) => ({ notifications })
-)<PropsWithChildren>(({ children, notifications }) => {
+const LayoutWrapper = memo(({ children }: PropsWithChildren) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -62,11 +53,7 @@ const LayoutWrapper = connectContext(
               paddingRight: "24px",
             }}
           >
-            {!!notifications.length && (
-              <Badge count={notifications.length}>
-                <Button icon={<SoundOutlined />} />
-              </Badge>
-            )}
+            <NotificationBadge />
           </div>
         </Header>
         <Content style={{ margin: "24px 16px 0" }}>{children}</Content>
