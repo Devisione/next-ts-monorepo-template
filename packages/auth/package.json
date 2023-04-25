@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@project/auth",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "next-auth": "^4.22.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "typescript": "*"
+  }
+}
