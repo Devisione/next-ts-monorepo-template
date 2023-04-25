@@ -9,14 +9,13 @@ type AppPropsWithLayout = AppProps & {
 };
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  // const getLayout =
-  //   Component.getLayout || ((page) => <LayoutWrapper>{page}</LayoutWrapper>);
+  const Layout = Component.Layout || LayoutWrapper;
 
   return (
     <AppStore.Provider>
-      <LayoutWrapper>
+      <Layout>
         <Component {...pageProps} />
-      </LayoutWrapper>
+      </Layout>
     </AppStore.Provider>
   );
 }

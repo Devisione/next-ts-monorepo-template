@@ -1,5 +1,5 @@
 import { createStore } from "context-base-api";
-import { useNotificationState } from "../../../notifications/model/store/useNotificationState";
+import { useNotificationState } from "./useNotificationState";
 
 export const AppStore = createStore(() => {
   const { notifications, setNotifications } = useNotificationState();

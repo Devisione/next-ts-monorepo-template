@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
+import { Notification } from "../types/Notifications";
 
 export const useNotificationState = () => {
-  const [notifications, setNotifications] = useState<
-    {
-      id: number;
-      text: string;
-    }[]
-  >([]);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
 
   // pseudo sockets
   useEffect(() => {
