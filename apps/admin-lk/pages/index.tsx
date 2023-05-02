@@ -4,6 +4,7 @@ import { theme, Table, Space } from "@project/ui-kit";
 import { connectContext } from "context-base-api";
 import { PostListStore } from "../entities/post/model/store/PostList";
 import { Post } from "../entities/post/model/types";
+import Link from "next/link";
 
 const MainPage = connectContext(
   [PostListStore.Context],
@@ -48,7 +49,9 @@ const columns = ({ removePost }: any) => [
     title: "Label",
     dataIndex: "label",
     key: "label",
-    render: (text: string) => <a>{text}</a>,
+    render: (text: string, record: Post) => (
+      <Link href={`/post/${record.id}`}>{text}</Link>
+    ),
   },
   {
     title: "description",
@@ -60,7 +63,6 @@ const columns = ({ removePost }: any) => [
     key: "action",
     render: (_: any, record: Post) => (
       <Space size="middle">
-        <a>Edit</a>
         <a onClick={() => removePost(record.id)}>Delete</a>
       </Space>
     ),
